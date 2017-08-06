@@ -1,0 +1,18 @@
+[user]
+	name = Sergio Alcantara
+[github]
+	user = serg-io
+[core]
+	editor = vim
+	attributesFile = ~/.gitattributes
+[merge]
+	tool = meld
+[push]
+	default = simple
+
+# This filter executes ~/.files/bin/noeofl to remove empty lines at the end of a file.
+# Files that use this filter are listed in ~/.gitattributes.
+# Inspired by: https://stackoverflow.com/a/6503415
+[filter "noeofl"]
+	clean = ~/.files/bin/noeofl
+	smudge = cat

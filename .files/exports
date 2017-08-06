@@ -1,0 +1,5 @@
+# Make vim the default editor.
+export EDITOR="vim"
+
+# Add ~/.files/bin and ./node_modules/.bin to $PATH
+export PATH="$PATH:$HOME/.files/bin:./node_modules/.bin"

@@ -1,0 +1,26 @@
+#!/usr/bin/node
+
+/**
+ * No End of File Lines.
+ * 
+ * Reads the contents of a file, from STDIN, and outputs the same file,
+ * into STDOUT, but without the new line(s) at the end of the file.
+ *
+ * Inspired by: https://stackoverflow.com/a/6503415
+ */
+
+var tail = '',
+	UTF8 = 'utf8';
+
+process.stdin.setEncoding( UTF8 );
+
+process.stdin.on('readable', function() {
+	var chunk = process.stdin.read();
+
+	if (chunk !== null) {
+		process.stdout.write( tail + chunk.replace( /(\r?\n)+$/, '' ), UTF8 );
+
+		tail = chunk.match( /(\r?\n)+$/g );
+		tail = tail === null ? '' : tail[ 0 ];
+	}
+});
