@@ -6,6 +6,9 @@
 	editor = vim
 	attributesFile = ~/.gitattributes
 
+[color]
+    ui = true
+
 [merge]
 	tool = meld
 

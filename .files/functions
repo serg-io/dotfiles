@@ -1,0 +1,6 @@
+# Sets the AWS_PROFILE environment variable to whatever is given in the first argument.
+# The AWS_PROFILE environment variable indicates what profile within the configuration files
+# (~/.aws/config and ~/.aws/credentials) should be used by the AWS SDKs and CLI.
+function aws-profile() {
+	export AWS_PROFILE=$1
+}

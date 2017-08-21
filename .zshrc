@@ -13,7 +13,8 @@ compinit
 # End of lines added by compinstall
 
 
-# Source environment variables and aliases.
+# Source aliases, exports, and functions.
 # Inspired by: https://askubuntu.com/a/195357
-source $HOME/.files/exports
 source $HOME/.files/aliases
+source $HOME/.files/exports
+source $HOME/.files/functions

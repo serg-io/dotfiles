@@ -3,8 +3,8 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.files/.git/ --work-tree=$HOME -c s
 
 # Set default flags for ls and add a few helpful aliases.
 alias ls="ls -F --group-directories-first --color=always"
-alias ll="ls -al"
-alias la="ls -A"
+alias ll="ls -alh"
+alias la="ls -Ah"
 alias l="ls -C"
 
 # Set default flags for grep, egrep, and fgrep.

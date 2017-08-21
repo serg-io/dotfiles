@@ -6,7 +6,7 @@
 *.json	filter=noeofl
 *.less	filter=noeofl
 *.md	filter=noeofl
-*rc	filter=noeofl
+*rc		filter=noeofl
 *.scss	filter=noeofl
 *.svg	filter=noeofl
 *.txt	filter=noeofl
