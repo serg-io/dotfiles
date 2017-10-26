@@ -11,7 +11,3 @@ alias l="ls -C"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
-
-# Use SSH configuration file from private directory.
-alias ssh="ssh -F ~/.private/.ssh/config"
-alias scp="scp -F ~/.private/.ssh/config"
