@@ -1,13 +1,9 @@
-# Use separate file for user name, GitHub token, etc.
-[include]
-	path = ~/.private/.gitconfig
-
 [core]
 	editor = vim
 	attributesFile = ~/.gitattributes
 
 [color]
-    ui = true
+	ui = true
 
 [merge]
 	tool = meld
@@ -21,3 +17,8 @@
 [filter "noeofl"]
 	clean = ~/.files/bin/noeofl
 	smudge = cat
+
+# Use a separate file, in the .private directory, for personal information, such as user
+# name and email, and other personal git settings.
+[include]
+	path = ~/.private/.gitconfig
