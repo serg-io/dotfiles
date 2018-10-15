@@ -11,3 +11,8 @@ alias l="ls -C"
 alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
+
+# Source private aliases from ~/.private/aliases if it exist.
+if [[ -r "$HOME/.private/aliases" ]]; then
+	source "$HOME/.private/aliases"
+fi

@@ -1,5 +1,25 @@
 # Make vim the default editor.
 export EDITOR="vim"
 
-# Add ~/.local/bin, ~/.files/bin, and ./node_modules/.bin to $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/.files/bin:./node_modules/.bin"
+# Add ~/.local/bin and ~/.files/bin to $PATH
+export PATH="$PATH:$HOME/.local/bin:$HOME/.files/bin"
+
+# Path to private dot files.
+PRIVATE="$HOME/.private"
+
+# Add private bin directory to $PATH if it exist.
+if [[ -d "$PRIVATE/bin" ]]; then
+	export PATH="$PATH:$PRIVATE/bin"
+fi
+
+# Load nvm if it's installed: https://github.com/creationix/nvm#git-install
+if [[ -d "$HOME/.nvm" ]]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+# Source private exports from ~/.private/exports if it exist.
+if [[ -r "$PRIVATE/exports" ]]; then
+	source "$PRIVATE/exports"
+fi

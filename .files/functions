@@ -4,3 +4,8 @@
 function aws-profile() {
 	export AWS_PROFILE=$1
 }
+
+# Source private functions from ~/.private/functions if it exist.
+if [[ -r "$HOME/.private/functions" ]]; then
+	source "$HOME/.private/functions"
+fi
