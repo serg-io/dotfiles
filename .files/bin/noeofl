@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env sh
 
 # This script (short for "No End of File Lines") uses awk to remove all whitespace at the end of a
 # file. In the first section, the current line `$0` is assigned to `buffer` if it's the first line,

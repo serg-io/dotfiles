@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # Make vim the default editor.
 export EDITOR="vim"
 
@@ -12,7 +14,7 @@ if [[ -d "$PRIVATE/bin" ]]; then
 	export PATH="$PATH:$PRIVATE/bin"
 fi
 
-# Load nvm if it's installed: https://github.com/creationix/nvm#git-install
+# Load nvm if it's installed: https://github.com/nvm-sh/nvm#manual-install
 if [[ -d "$HOME/.nvm" ]]; then
 	export NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

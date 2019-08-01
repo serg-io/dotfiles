@@ -1,8 +1,24 @@
+#!/usr/bin/env sh
+
 # Sets the AWS_PROFILE environment variable to whatever is given in the first argument.
 # The AWS_PROFILE environment variable indicates what profile within the configuration files
 # (~/.aws/config and ~/.aws/credentials) should be used by the AWS SDKs and CLI.
 function aws-profile() {
+	# Used by the AWS SDKs.
+	# https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html
 	export AWS_PROFILE=$1
+
+	# Used by the AWS CLI.
+	# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
+	export AWS_DEFAULT_PROFILE=$1
+
+	# Used by the AWS EB CLI
+	# https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-configuration.html#eb-cli3-profile
+	export AWS_EB_PROFILE=$1
+
+	# Export access key.
+	export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
+	export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
 }
 
 # Source private functions from ~/.private/functions if it exist.

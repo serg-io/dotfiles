@@ -3,6 +3,10 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
+" Fix scroll down problem in Suckless terminal (st) as explained here:
+" https://www.reddit.com/r/linux4noobs/comments/aa5yot/suckless_simple_terminal_cant_scroll_down_in_vim/
+set ttymouse=sgr
+
 " Store all temp files (.swo and .swp) in ~/.vim/tmp
 " http://vimdoc.sourceforge.net/htmldoc/options.html#'dir'
 set dir=$HOME/.vim/tmp
@@ -44,3 +48,6 @@ highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
 " Treat LESS and SASS files as CSS files
 au BufRead,BufNewFile *.less set filetype=css
 au BufRead,BufNewFile *.scss set filetype=css
+
+" Use 2 spaces for indentation in YAML files (source: https://stackoverflow.com/a/54747794).
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
