@@ -18,7 +18,7 @@
 	clean = ~/.files/bin/noeofl
 	smudge = cat
 
-# Use a separate file, in the .private directory, for personal information, such as user
+# Use a separate file, in the private directory, for personal information, such as user
 # name and email, and other personal git settings.
 [include]
-	path = ~/.private/.gitconfig
+	path = ~/.files/private/.gitconfig

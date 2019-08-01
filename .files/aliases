@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # This alias is used to manage the dotfiles repository instead of using git directly.
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.files/.git/ --work-tree=$HOME -c status.showUntrackedFiles=no"
+alias dotfiles="/usr/bin/git --git-dir=\"$HOME/.files/.git/\" --work-tree=\"$HOME\" -c status.showUntrackedFiles=no"
 
 # Set default flags for ls and add a few helpful aliases.
 alias ls="ls -F --group-directories-first --color=always"
@@ -14,7 +14,7 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
 
-# Source private aliases from ~/.private/aliases if it exist.
-if [[ -r "$HOME/.private/aliases" ]]; then
-	source "$HOME/.private/aliases"
+# Source private aliases from ~/.files/private/aliases if the file exists.
+if [[ -r "$HOME/.files/private/aliases" ]]; then
+	source "$HOME/.files/private/aliases"
 fi
