@@ -9,6 +9,15 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 
+# Add .zfunc directory to fpath.
+# https://unix.stackexchange.com/a/33898
+# http://zsh.sourceforge.net/Doc/Release/Functions.html#Autoloading-Functions
+fpath=(
+	$HOME/.zfunc
+	$HOME/.zfunc/completions
+	"${fpath[@]}"
+)
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
