@@ -14,10 +14,6 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
 
-# Start the SSH agent when startx is executed.
-# https://wiki.archlinux.org/index.php/SSH_keys#ssh-agent_as_a_wrapper_program
-alias startx="ssh-agent startx"
-
 # Source private aliases from ~/.files/private/aliases if the file exists.
 if [[ -r "$HOME/.files/private/aliases" ]]; then
 	source "$HOME/.files/private/aliases"
