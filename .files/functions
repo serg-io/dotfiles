@@ -19,6 +19,12 @@ function aws-profile() {
 	# Export access key.
 	export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
 	export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
+
+	# Export region.
+	# https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-region.html#setting-region-environment-variable
+	# https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html
+	export AWS_REGION=$(aws configure get region)
+	export AWS_DEFAULT_REGION=$(aws configure get region)
 }
 
 # Source private functions from ~/.files/private/functions if the file exists.
