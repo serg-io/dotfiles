@@ -3,16 +3,13 @@
 # Make vim the default editor.
 export EDITOR="vim"
 
-# Add ~/.local/bin and ~/.files/bin to $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/.files/bin"
-
-# Path to private dotfiles.
-PRIVATE="$HOME/.files/private"
-
-# Add private bin directory to $PATH if it exist.
-if [[ -d "$PRIVATE/bin" ]]; then
-	export PATH="$PATH:$PRIVATE/bin"
+# Add ~/.local/bin to $PATH if it exists.
+if [[ -d "$HOME/.local/bin" ]]; then
+	export PATH="$PATH:$HOME/.local/bin"
 fi
+
+# Add ~/.files/bin to $PATH
+export PATH="$PATH:$HOME/.files/bin"
 
 # Load nvm if it's installed: https://github.com/nvm-sh/nvm#manual-install
 if [[ -d "$HOME/.nvm" ]]; then
@@ -21,7 +18,9 @@ if [[ -d "$HOME/.nvm" ]]; then
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# Source private exports from ~/.files/private/exports if the file exists.
-if [[ -r "$PRIVATE/exports" ]]; then
-	source "$PRIVATE/exports"
+# Source private exports from ~/.private/exports if the file exists.
+if [[ -r "$HOME/.private/exports" ]]; then
+	source "$HOME/.private/exports"
 fi
+
+# vim: filetype=sh

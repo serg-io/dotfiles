@@ -21,7 +21,7 @@ function aws-profile() {
 	export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
 }
 
-# Source private functions from ~/.files/private/functions if the file exists.
-if [[ -r "$HOME/.files/private/functions" ]]; then
-	source "$HOME/.files/private/functions"
+# Source private functions from ~/.private/functions if the file exists.
+if [[ -r "$HOME/.private/functions" ]]; then
+	source "$HOME/.private/functions"
 fi
