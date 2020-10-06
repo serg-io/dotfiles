@@ -1,4 +1,30 @@
-#!/usr/bin/env sh
+#
+# This file contains alias and function definitions and is meant to be loaded by interactive shells.
+#
+
+###########
+# Aliases #
+###########
+
+# This alias is used to manage the dotfiles repository instead of using git directly.
+alias dotfiles="/usr/bin/git --git-dir=\"$HOME/.files/.git/\" --work-tree=\"$HOME\" -c status.showUntrackedFiles=no"
+
+# Set default flags for ls and add a few helpful aliases.
+alias ls="ls -F --group-directories-first --color=always"
+alias ll="ls -alh"
+alias la="ls -Ah"
+alias l="ls -C"
+
+# Set default flags for grep, egrep, and fgrep.
+alias grep="grep --color=always"
+alias egrep="egrep --color=always"
+alias fgrep="fgrep --color=always"
+
+
+
+#############
+# Functions #
+#############
 
 # Sets the AWS_PROFILE environment variable to whatever is given in the first argument.
 # The AWS_PROFILE environment variable indicates what profile within the configuration files
@@ -27,7 +53,18 @@ function aws-profile() {
 	export AWS_DEFAULT_REGION=$(aws configure get region)
 }
 
-# Source private functions from ~/.private/functions if the file exists.
-if [[ -r "$HOME/.private/functions" ]]; then
-	source "$HOME/.private/functions"
+
+
+# Load nvm if it's installed: https://github.com/nvm-sh/nvm#manual-install
+if [[ -d "$HOME/.nvm" ]]; then
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+# Source private shrc from ~/.private/.shrc if the file exists.
+if [[ -r "$HOME/.private/.shrc" ]]; then
+	source "$HOME/.private/.shrc"
+fi
+
+# vim: filetype=sh

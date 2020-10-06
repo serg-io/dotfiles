@@ -18,12 +18,11 @@ fpath=(
 	"${fpath[@]}"
 )
 
-autoload -Uz compinit
+autoload -U compinit
 compinit
 # End of lines added by compinstall
 
-# Source aliases, exports, and functions.
-# Inspired by: https://askubuntu.com/a/195357
-source $HOME/.files/aliases
-source $HOME/.files/exports
-source $HOME/.files/functions
+# Load interactive shell settings (aliases, function, etc).
+source $HOME/.files/.shrc
+
+# vim: filetype=sh
