@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-# This script (short for "No End of File Lines") uses awk to remove all whitespace at the end of a
-# file. In the first section, the current line `$0` is assigned to `buffer` if it's the first line,
-# otherwise a new line and the current line is appended to `buffer`. The second section skips the
-# rest and moves to the "next" line if the current line contains only whitespace. The third section
-# prints the `buffer` and clears the `buffer.
-
-awk '{if (NR == 1) {buffer = $0} else {buffer = buffer "\n" $0}} $0 ~ /^\s*$/ {next} {printf "%s",buffer; buffer = ""}'
