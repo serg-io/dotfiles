@@ -8,7 +8,7 @@ added to the repository, see _.gitignore_.
 Alternatively, AWS files can be stored in the private directory and
 [symlinks](https://en.wikipedia.org/wiki/Symbolic_link) can be created in this directory. This will
 allow you to keep all your private files in the _private_ directory. For instance, if your AWS
-_config_ file is located at _$HOME/.files/private/aws/config_ you can create a symlink using the
+_config_ file is located at _$HOME/.private/aws/config_ you can create a symlink using the
 following command:
 
-	ln -s ~/.files/private/aws/config ~/.aws/config
+	ln -s ~/.private/aws/config ~/.aws/config

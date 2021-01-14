@@ -42,7 +42,7 @@ hi SpecialKey ctermfg=DarkGrey
 
 " Show a margin at column 100 and set its color.
 " http://vimdoc.sourceforge.net/htmldoc/options.html#'colorcolumn'
-set colorcolumn=100
+set colorcolumn=120
 highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
 
 " Treat LESS and SASS files as CSS files
