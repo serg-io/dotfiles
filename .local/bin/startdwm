@@ -1,0 +1,23 @@
+#
+# Start dwm.
+#
+# This script is meant to be executed in ~/.xinitrc.
+#
+# By starting dwm in an infinite loop, dwm can be restarted, without destroying other X windows,
+# by pressing the usual `Mod-Shift-Q` combination. To end the X session execute: `killall xinit`.
+#
+# Source: https://wiki.archlinux.org/index.php/Dwm#Restart_dwm
+#
+
+# Start conky and pipe it's output to the statusbar binary.
+# https://wiki.archlinux.org/index.php/Dwm#Conky_statusbar
+conky --config=$HOME/.config/conky/statusbar.conf | $HOME/.local/bin/statusbar >> $HOME/.dwm.log 2>&1 &
+
+while true; do
+	# Execute dwm, append its stdout output to ~/.dwm.log and redirect its stderr to stdout.
+	# This causes both, stdout and stderr, to be appended to ~/.dwm.log.
+	# Source: https://stackoverflow.com/a/876242
+	dwm >> $HOME/.dwm.log 2>&1
+done
+
+# vim: filetype=sh
