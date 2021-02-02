@@ -20,6 +20,8 @@ alias grep="grep --color=always"
 alias egrep="egrep --color=always"
 alias fgrep="fgrep --color=always"
 
+# Enable support for mouse wheel scrolling in less.
+alias less="less --mouse"
 
 
 #############
