@@ -1,0 +1,6 @@
+# This file forces git to create the ~/.cache/less directory.
+
+# Ignore all files in this directory.
+*
+# Except this file.
+!.gitignore

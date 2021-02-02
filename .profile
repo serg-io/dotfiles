@@ -14,6 +14,21 @@
 # Make vim the default editor.
 export EDITOR="vim"
 
+#
+# Options for the less command.
+#
+#   * Set the size of tab characters to 4 spaces.
+#   * Enable mouse.
+#   * Exit if the entire file fits on the screen.
+#   * Ignore case when searching.
+#   * Enable color.
+#
+export LESS="--tabs=4 --mouse --quit-if-one-screen --IGNORE-CASE --RAW-CONTROL-CHARS"
+
+# Set less history size to 1000 and store the history data file in ~/.cache/less
+export LESSHISTSIZE="1000"
+export LESSHISTFILE="$HOME/.cache/less/history"
+
 # Add ~/.local/bin to $PATH if it exists.
 if [[ -d "$HOME/.local/bin" ]]; then
 	export PATH="$PATH:$HOME/.local/bin"
