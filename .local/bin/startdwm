@@ -13,6 +13,10 @@
 # https://wiki.archlinux.org/index.php/Dwm#Conky_statusbar
 conky --config=$HOME/.config/conky/statusbar.conf | $HOME/.local/bin/statusbar >> $HOME/.dwm.log 2>&1 &
 
+# Start dunst.
+# https://wiki.archlinux.org/index.php/Dunst#Installation
+dunst &
+
 while true; do
 	# Execute dwm, append its stdout output to ~/.dwm.log and redirect its stderr to stdout.
 	# This causes both, stdout and stderr, to be appended to ~/.dwm.log.
