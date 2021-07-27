@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# Start Google Chrome (stable) using the specified user data directory.
+#
+
+
+#
+# The user data directory (name of directory in ~/.config/chrome-users)
+# can be specified using the first CLI argument. If not provided, uses "default".
+#
+USER="${1:-default}"
+
+/usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/chrome-users/$USER"
