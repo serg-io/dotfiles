@@ -25,4 +25,7 @@ compinit
 # Load interactive shell settings (aliases, function, etc).
 source $HOME/.files/.shrc
 
+# Auto completion for the kops command is not working for some reason. This fixes the issue.
+source /usr/share/zsh/site-functions/_kops
+
 # vim: filetype=sh

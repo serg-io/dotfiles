@@ -10,7 +10,7 @@
 alias dotfiles="/usr/bin/git --git-dir=\"$HOME/.files.git/\" --work-tree=\"$HOME\" -c status.showUntrackedFiles=no"
 
 # Set default flags for ls and add a few helpful aliases.
-alias ls="ls -F --group-directories-first --color=always"
+alias ls="ls -F --group-directories-first --color=always --time-style=\"+%F %T %Z\""
 alias ll="ls -alh"
 alias la="ls -Ah"
 alias l="ls -C"
